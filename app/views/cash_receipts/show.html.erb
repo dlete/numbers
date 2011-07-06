@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @cash_receipt.date %>
+</p>
+
+<p>
+  <b>Concept:</b>
+  <%= @cash_receipt.concept %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @cash_receipt.amount %>
+</p>
+
+<p>
+  <b>Account:</b>
+  <%= @cash_receipt.account.name %>
+</p>
+
+<p>
+  <b>Posted:</b>
+  <%= @cash_receipt.posted %>
+</p>
+
+
+<%= link_to 'Edit', edit_cash_receipt_path(@cash_receipt) %> |
+<%= link_to 'Back', cash_receipts_path %>

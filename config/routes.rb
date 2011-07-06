@@ -1,4 +1,6 @@
 Numbers::Application.routes.draw do
+  resources :cash_receipts
+
   resources :accounts
 
   resources :account_types

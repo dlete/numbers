@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110704194941) do
+ActiveRecord::Schema.define(:version => 20110706201127) do
 
   create_table "account_types", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(:version => 20110704194941) do
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.integer  "account_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cash_receipts", :force => true do |t|
+    t.date     "date"
+    t.string   "concept"
+    t.decimal  "amount"
+    t.integer  "account_id"
+    t.boolean  "posted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
