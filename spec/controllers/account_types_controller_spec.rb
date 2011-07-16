@@ -20,6 +20,8 @@ require 'spec_helper'
 
 describe AccountTypesController do
 
+  render_views
+
   # This should return the minimal set of attributes required to create a valid
   # AccountType. As you add validations to AccountType, be sure to
   # update the return value of this method accordingly.
@@ -36,11 +38,25 @@ describe AccountTypesController do
   end
 
   describe "GET show" do
-    it "assigns the requested account_type as @account_type" do
-      account_type = AccountType.create! valid_attributes
-      get :show, :id => account_type.id.to_s
-      assigns(:account_type).should eq(account_type)
+    before(:each) do
+      @account_type = Factory(:account_type)
     end
+
+    it "should be successful" do
+      get :show, :id => @account_type.id.to_s
+      response.should be_success
+    end
+
+    it "should find the right account_type" do
+      get :show, :id => @account_type
+      assigns(:account_type).should == @account_type
+    end
+    
+#    it "assigns the requested account_type as @account_type" do
+#      account_type = AccountType.create! valid_attributes
+#      get :show, :id => account_type.id.to_s
+#      assigns(:account_type).should eq(account_type)
+#    end
   end
 
   describe "GET new" do

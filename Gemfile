@@ -33,8 +33,10 @@ gem 'jquery-rails', '>= 0.2.6'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
+  gem 'faker', '0.9.5'
 end
 
 group :test do
   gem 'rspec-rails', '2.6.1'
+  gem 'factory_girl_rails', '1.0'
 end
